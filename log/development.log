@@ -1081,3 +1081,24 @@ Processing PicturesController#create (for 127.0.0.1 at 2009-11-21 19:44:30) [POS
 [paperclip] Saving attachments.
 [paperclip] saving /Users/asacalow/Projects/Madlab/BoxOfTurks/WebService/public/system/pics/12/original/file.jpg
 Completed in 79ms (View: 3, DB: 1) | 200 OK [http://boxofturks.local/pictures]
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePictures (20091121132010)
+Migrating to CreatePhotos (20091121200053)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pic_file_name" varchar(255), "pic_content_type" varchar(255), "pic_file_size" integer(255), "pic_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091121200053')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("photos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("pictures")[0m
