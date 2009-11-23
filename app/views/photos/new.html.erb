@@ -37,12 +37,10 @@
   </script>
   
   <script type="text/javascript">
-    $(window).load(function() {
-      window.setTimeout(function() {
-       draw.jobReady($.query.get('imageUrl'));
-      }, 500);
-    });
-  
+    function urlString() {
+      return $.query.get('imageUrl');
+    }
+    
     function jobDone() {
       $('#turkComplete').submit();
     }
