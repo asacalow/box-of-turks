@@ -1,13 +1,12 @@
 set :application, "boxofturks"
-set :repository,  "git@github.com:asacalow/Box-of-turks.git"
+set :repository,  "git://github.com/asacalow/Box-of-turks.git"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "asacalow.co.uk"                          # Your HTTP server, Apache/etc
+role :app, "asacalow.co.uk"                          # This may be the same as your `Web` server
+role :db,  "asacalow.co.uk", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need

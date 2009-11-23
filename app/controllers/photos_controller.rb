@@ -7,6 +7,10 @@ class PhotosController < ApplicationController
     
   end
   
+  def upload
+    
+  end
+  
   def create
     p = Photo.new
     p.pic = params[:pic]

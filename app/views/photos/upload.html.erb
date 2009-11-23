@@ -1,0 +1,4 @@
+<% form_for Photo.new, :html => {:multipart => true} do |f| %>
+  <%= file_field_tag :pic %>
+  <%= f.submit %>
+<% end %>
