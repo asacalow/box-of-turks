@@ -9,7 +9,7 @@ class PicturesController < ApplicationController
   
   def create
     p = Picture.new
-    p.pic = params[:Filedata]
+    p.drawing = params[:Filedata]
     p.save
     render :text => 'yay!'
   end
