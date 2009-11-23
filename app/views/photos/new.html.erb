@@ -1,4 +1,64 @@
-<% form_for Photo.new, :html => {:multipart => true} do |f| %>
+<!--<% form_for Photo.new, :html => {:multipart => true} do |f| %>
   <%= f.file_field :pic %>
   <%= f.submit %>
+<% end %>-->
+
+<% content_for :head do %>
+  <script language="javascript">AC_FL_RunContent = 0;</script>
+  <script src="/javascripts/AC_RunActiveContent.js" language="javascript"></script>
+  
+  <script language="javascript">
+  	if (AC_FL_RunContent == 0) {
+  		alert("This page requires AC_RunActiveContent.js.");
+  	} else {
+  		AC_FL_RunContent(
+  			'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+  			'width', '798',
+  			'height', '600',
+  			'src', 'draw',
+  			'quality', 'high',
+  			'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+  			'align', 'middle',
+  			'play', 'true',
+  			'loop', 'false',
+  			'scale', 'showall',
+  			'wmode', 'window',
+  			'devicefont', 'false',
+  			'id', 'draw',
+  			'bgcolor', '#ffffff',
+  			'name', 'draw',
+  			'menu', 'true',
+  			'allowFullScreen', 'false',
+  			'allowScriptAccess','sameDomain',
+  			'movie', '/draw',
+  			'salign', ''
+  			); //end AC code
+  	}
+  </script>
+  
+  <script type="text/javascript">
+    $(window).load(function() {
+      window.setTimeout(function() {
+       draw.jobReady($.query.get('imageUrl'));
+      }, 500);
+    });
+  
+    function jobDone() {
+      $('#turkComplete').submit();
+    }
+  </script>
 <% end %>
+
+<noscript>
+  <object id="draw" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="798" height="600" align="middle">
+  <param name="allowScriptAccess" value="sameDomain" />
+  <param name="allowFullScreen" value="false" />
+  <param name="movie" value="/draw.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />
+  <embed name="draw" src="/draw.swf" quality="high" bgcolor="#ffffff" width="798" height="600" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+  </object>
+</noscript>
+
+<form id="turkComplete" action="http://workersandbox.mturk.com/mturk/externalSubmit">
+  <input type="hidden" id="assignmentId" name="assignmentId" value="" />
+  <input type="hidden" name="bish" value="bosh" />
+</form>

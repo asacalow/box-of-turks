@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
   
   def create
     p = Photo.new
-    p.pic = params[:photo]
+    p.pic = params[:pic]
     p.save
     render :text => 'yay!'
   end
